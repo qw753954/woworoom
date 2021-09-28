@@ -2,25 +2,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  @include mobile {
+    padding: 20px 0;
+    flex-direction: column;
+  }
+}
+
+.burger-btn {
+  display: none;
+  color: $light;
+  @include mobile {
+    display: block;
+    position: absolute;
+    right: 0;
+  }
 }
 
 .logo {
   color: #fff;
   font-size: 20px;
+  font-weight: normal;
   text-shadow: 0 0 3px #444;
   letter-spacing: 6px;
   user-select: none;
 }
 
-.navbar {
+.menu {
   display: flex;
   padding: 20px 0;
+  transition: .5s;
+  &.active {
+    max-height: 300px;
+  }
   li+li {
     margin-left: 16px;
   }
   a {
     padding: 16px 8px;
     color: inherit;
+    display: block;
     position: relative;
     &::after {
       content: '';
@@ -49,6 +70,30 @@
     padding-right: 6px;
     transition: .4s;
   }
+  @include mobile {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    padding: 0;
+    max-height: 0px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, .65);
+    backdrop-filter: blur(5px);
+    li+li {
+      margin: 0;
+    }
+    a {
+      text-align: center;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+    a::after, i {
+      display: none;
+    }
+  }
 }
 
 .banner {
@@ -61,7 +106,6 @@
   }
   h2 {
     font-size: 36px;
-    font-weight: bold;
     padding: 24px;
     color: #fff;
     text-shadow: $primary 0 0 4px;
@@ -69,11 +113,23 @@
     border-radius: 10px;
     background-color: rgba(0, 0, 0, .05);
   }
+  @include pad {
+    h2 {
+      font-size: 30px;
+    }
+  }
+  @include mobile {
+    .container {
+      justify-content: center;
+    }
+    h2 {
+      font-size: 26px;
+    }
+  }
 }
 
 .title {
   font-size: 28px;
-  font-weight: bold;
   text-align: center;
   margin-bottom: 48px;
   &::after {
@@ -86,10 +142,14 @@
     height: 3px;
     background-color: $primary;
   }
+  @include mobile {
+    font-size: 24px;
+  }
 }
 
 .advantage {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   li {
     width: 30%;
@@ -104,14 +164,37 @@
     text-align: center;
     font-size: 18px;
   }
+  @include mobile {
+    li {
+      width: 80%;
+      margin: 0 auto 24px;
+    }
+    img {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+  }
 }
 
 .search- {
   &block {
     display: flex;
-    select,
-    input {
+    flex-wrap: wrap;
+    select, input {
       margin-right: 16px;
+    }
+    @include mobile {
+      display: block;
+      select, input, button {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      select, input {
+        margin-right: 0;
+      }
     }
   }
   &bg {
@@ -123,37 +206,21 @@
   }
 }
 
-.keyword-block {
-  position: relative;
-  display: flex;
-}
-
-.keyword-del {
-  position: absolute;
-  width: 30px;
-  height: 100%;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $light;
-  font-size: 12px;
-}
-
 .product- {
   &block {
-    padding: 32px 0;
+    padding: 32px 20px;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 54px;
+    @include pad {
+      justify-content: center;
+    }
   }
   &item {
     display: flex;
     flex-direction: column;
     width: 320px;
-    margin: 0 21px 42px;
+    margin: 0 16px 42px;
     background-color: $lighter;
     position: relative;
   }
@@ -170,7 +237,6 @@
   }
   &title {
     font-size: 20px;
-    font-weight: bold;
     text-align: center;
     margin-bottom: 16px;
   }
@@ -180,25 +246,33 @@
     align-items: center;
     padding-bottom: 24px;
   }
+  @include mobile {
+    &item {
+      margin-bottom: 24px;
+    }
+    &title {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    &body {
+      padding-bottom: 8px;
+      p {
+        display: none;
+      }
+    }
+  }
 }
 
 .tag {
-  font-size: 14px;
-  letter-spacing: 2px;
   color: #fff;
-  text-shadow: $primary 0 0 4px;
+  letter-spacing: 2px;
+  text-shadow: $primary 0 0 3px;
   position: absolute;
   top: 16px;
   right: 16px;
 }
 
-.bg-cover {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.origine-price {
+.origin-price {
   color: $light;
   font-size: 14px;
   font-style: italic;
@@ -248,7 +322,10 @@
     width: 100%;
     height: 100px;
     object-fit: cover;
-    margin-right: 10px;
+    border-radius: 5px;
+    @include mobile { 
+      display: none;
+    }
   }
   &total {
     font-size: 20px;
@@ -259,8 +336,7 @@
 }
 
 .empty-cart {
-  font-size: 16px;
-  text-align: center;
+  margin: auto;
 }
 
 .reservation-form {
@@ -299,23 +375,16 @@
   }
 }
 
-.btn {
-  padding: 8px 32px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  background: transparent;
-  transition: .2s;
-}
-
-.section,
-hr {
+.section, hr {
   margin-bottom: 96px;
+  @include mobile {
+    margin-bottom: 48px;
+  }
 }
 
 .order- {
   &top {
-      text-align: right;
+    text-align: right;
   }
   &table {
     width: 100%;
@@ -327,7 +396,6 @@ hr {
       padding: 8px;
     }
     th {
-      font-weight: bold;
       color: #fff;
       background-color: $primary;
     }
@@ -356,21 +424,8 @@ hr {
   background-color: $lighter;
 }
 
-.btn-dark {
-  color: #fff;
-  background: $primary;
-  border: 1px solid $primary;
-  &:hover {
-    color: $primary;
-    background: #eee;
-    border: 1px solid $primary;
-  }
-}
-
-.btn-outline-dark {
-  border: 1px solid $primary;
-  &:hover {
-    background: $primary;
-    color: #fff;
+@include pad {
+  .table-responsive {
+    overflow: auto;
   }
 }

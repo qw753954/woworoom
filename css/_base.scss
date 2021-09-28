@@ -1,6 +1,6 @@
 ::selection {
-  background-color: $light;
   color: #fff;
+  background-color: $light;
 }
 
 body {
@@ -8,6 +8,9 @@ body {
   font-size: 15px;
   line-height: 1.5;
   color: $primary;
+  @include mobile {
+    font-size: 14px;
+  }
 }
 
 a {
@@ -24,6 +27,10 @@ img {
 
 small {
   font-size: 75%;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
 }
 
 button {
@@ -48,6 +55,11 @@ select {
 table th,
 table td {
   vertical-align: middle;
+  white-space: nowrap;
+}
+
+table th {
+  font-weight: bold;
 }
 
 .container {

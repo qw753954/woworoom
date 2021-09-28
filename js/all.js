@@ -37,20 +37,20 @@ function renderProduct(arr) {
     str +=
       `
       <li class="product-item">
-          <div class="product-img bg-cover" style="background-image: url(${item.images}">
-            <span class="tag"># ${item.category}</span>
-          </div>
-          <div class="product-body">
-            <h3 class="product-title">${item.title}</h3>
-            <p>${item.description}</p>      
-          </div>
-          <div class="product-footer">
-            <del class="origine-price">$${item.origin_price}</del>
-            <p class="discount-price">$${item.price}</p> 
-            <button type="button" class="btn btn-outline-dark" data-id="${item.id}">
-              點此選購
-            </button>
-          </div>
+        <div class="product-img" style="background: url(${item.images}) no-repeat center/ cover">
+          <small class="tag"># ${item.category}</small>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title">${item.title}</h3>
+          <p>${item.description}</p>      
+        </div>
+        <div class="product-footer">
+          <del class="origin-price">$${item.origin_price}</del>
+          <p class="discount-price">$${item.price}</p> 
+          <button type="button" class="btn btn-outline-dark" data-id="${item.id}">
+            點此選購
+          </button>
+        </div>
       </li>
       `
   })
@@ -100,14 +100,6 @@ searchKeyword.addEventListener('keypress', (e) => {
     searchProduct();
   }
 });
-
-// 清除 input 關鍵字的值
-const delKeyword = document.querySelector('.keyword-del');
-delKeyword.addEventListener('click', (e) => {
-  e.preventDefault();
-  searchKeyword.value = '';
-})
-
 
 /** 購物車 cart **/
 
@@ -187,20 +179,20 @@ function renderCart() {
     str +=
       `
       <tr>
-          <td>
-              <img src="${item.product.images}" class="cart-img">
-          </td>
-          <td>${item.product.title}</td>
-          <td>NT$ ${item.product.price}</td>
-          <td>
-              <button id="reduce-num" data-num="${item.quantity}" data-id="${item.id}"> - </button>
-              <label>${item.quantity}</label>
-              <button id="add-num" data-num="${item.quantity}" data-id="${item.id}"> + </button>
-          </td>
-          <td id="cart-item-price">NT$ ${item.product.price * item.quantity}</td>
-          <td>
-              <a href="#" id="cart-del-item" data-id="${item.id}"></a> 
-          </td>
+        <td>
+          <img src="${item.product.images}" class="cart-img">
+        </td>
+        <td>${item.product.title}</td>
+        <td>NT$ ${item.product.price}</td>
+        <td>
+          <button id="reduce-num" data-num="${item.quantity}" data-id="${item.id}"> - </button>
+          <label>${item.quantity}</label>
+          <button id="add-num" data-num="${item.quantity}" data-id="${item.id}"> + </button>
+        </td>
+        <td id="cart-item-price">NT$ ${item.product.price * item.quantity}</td>
+        <td style="text-align: right">
+          <a href="#" id="cart-del-item" data-id="${item.id}"></a> 
+        </td>
       </tr>
       `; // 要在刪除按鈕埋 id，可以直接刪除 API 中對應的 id 品項
   });
