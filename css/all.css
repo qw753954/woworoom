@@ -1,0 +1,678 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  scroll-behavior: smooth;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+::-moz-selection {
+  background-color: #888;
+  color: #fff;
+}
+
+::selection {
+  background-color: #888;
+  color: #fff;
+}
+
+body {
+  font-family: 'Roboto', 'Noto Sans TC', 'Microsoft JhengHei';
+  font-size: 15px;
+  line-height: 1.5;
+  color: #222;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+small {
+  font-size: 75%;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+input:focus,
+select:focus,
+button {
+  outline: none;
+}
+
+input,
+select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+
+table th,
+table td {
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 0 0 3px #444;
+  letter-spacing: 6px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+}
+
+.navbar li + li {
+  margin-left: 16px;
+}
+
+.navbar a {
+  padding: 16px 8px;
+  color: inherit;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  bottom: 5px;
+  height: 2px;
+  background-color: #ff6863;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.navbar a:hover {
+  opacity: .75;
+}
+
+.navbar a:hover::after {
+  right: 0;
+  left: 0;
+}
+
+.navbar a:hover i {
+  -webkit-transform: rotateX(360deg);
+          transform: rotateX(360deg);
+}
+
+.navbar i {
+  font-size: 14px;
+  color: #ff6863;
+  padding-right: 6px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.banner {
+  height: 400px;
+  margin-bottom: 48px;
+}
+
+.banner .container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+  font-weight: bold;
+  padding: 24px;
+  color: #fff;
+  text-shadow: #222 0 0 4px;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 25px;
+  left: 0;
+  right: 0;
+  margin: 15px auto;
+  height: 3px;
+  background-color: #222;
+}
+
+.advantage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.advantage li {
+  width: 30%;
+}
+
+.advantage img {
+  width: 500px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.advantage h4 {
+  text-align: center;
+  font-size: 18px;
+}
+
+.search-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-block select,
+.search-block input {
+  margin-right: 16px;
+}
+
+.search-bg {
+  padding: 20px 0;
+  background-color: #f2f2f2;
+}
+
+.search-keyword {
+  min-width: 230px;
+}
+
+.keyword-block {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.keyword-del {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  right: 16px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #888;
+  font-size: 12px;
+}
+
+.product-block {
+  padding: 32px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 54px;
+}
+
+.product-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 320px;
+  margin: 0 21px 42px;
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+.product-img {
+  height: 220px;
+}
+
+.product-body {
+  padding: 16px 24px 32px;
+  text-align: justify;
+  margin-bottom: auto;
+}
+
+.product-body p {
+  font-size: 14px;
+}
+
+.product-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.product-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 24px;
+}
+
+.tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: #222 0 0 4px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.bg-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.origine-price {
+  color: #888;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.discount-price {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #ff6863;
+}
+
+.cart-table {
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.cart-table th {
+  padding: 8px;
+  font-weight: bold;
+  border-bottom: 1px solid #888;
+}
+
+.cart-table td {
+  padding: 8px;
+}
+
+.cart-table tbody tr:hover {
+  background-color: rgba(242, 242, 242, 0.5);
+}
+
+.cart-table label {
+  padding: 0 4px;
+}
+
+.cart-table a::before {
+  content: '\f00d';
+  display: inline-block;
+  font-family: 'Font Awesome 5 Pro';
+}
+
+.cart-table a:hover {
+  color: #ff6863;
+}
+
+.cart-table button:hover {
+  -webkit-box-shadow: 1px 1px 3px #888;
+          box-shadow: 1px 1px 3px #888;
+}
+
+.cart-img {
+  width: 100%;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-total {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+.empty-cart {
+  font-size: 16px;
+  text-align: center;
+}
+
+.reservation-form {
+  max-width: 350px;
+  margin: 16px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.reservation-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.reservation-form label {
+  padding-bottom: 8px;
+}
+
+.reservation-form input,
+.reservation-form select {
+  margin-bottom: 16px;
+  border-color: rgba(136, 136, 136, 0.5);
+}
+
+.reservation-form input:focus, .reservation-form input:hover,
+.reservation-form select:focus,
+.reservation-form select:hover {
+  border-color: #888888;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+  -webkit-box-shadow: 0 0 6px rgba(136, 136, 136, 0.4);
+          box-shadow: 0 0 6px rgba(136, 136, 136, 0.4);
+}
+
+.reservation-form button {
+  margin-top: 12px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.reservation-form .feedback {
+  font-size: 14px;
+  color: #ff6863;
+  text-align: right;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn {
+  padding: 8px 32px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.section,
+hr {
+  margin-bottom: 96px;
+}
+
+.order-top {
+  text-align: right;
+}
+
+.order-table {
+  width: 100%;
+  font-size: 13px;
+  margin: 16px 0;
+  word-break: break-all;
+}
+
+.order-table th,
+.order-table td {
+  padding: 8px;
+}
+
+.order-table th {
+  font-weight: bold;
+  color: #fff;
+  background-color: #222;
+}
+
+.order-table td {
+  text-align: center;
+  border: 1px solid rgba(136, 136, 136, 0.4);
+}
+
+.order-table button {
+  padding: 0;
+}
+
+.order-table button:hover {
+  opacity: .6;
+}
+
+.order-table a {
+  color: #ff6863;
+}
+
+.order-table a:hover {
+  opacity: .7;
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.btn-dark {
+  color: #fff;
+  background: #222;
+  border: 1px solid #222;
+}
+
+.btn-dark:hover {
+  color: #222;
+  background: #eee;
+  border: 1px solid #222;
+}
+
+.btn-outline-dark {
+  border: 1px solid #222;
+}
+
+.btn-outline-dark:hover {
+  background: #222;
+  color: #fff;
+}
+/*# sourceMappingURL=all.css.map */

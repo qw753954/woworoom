@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>\ 窩窩家居 /</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.css">
+  <link rel="stylesheet" href="css/all.css">
+
+</head>
+
+<body>
+  <header class="container">
+    <div class="header">
+      <h1><a href="index.html" class="logo">\ 窩窩<small>家居</small> /</a></h1>
+
+      <ul class="navbar">
+        <li><a href="#傢俱一覽"><i class="fas fa-couch"></i>傢俱一覽</a></li>
+        <li><a href="#購物車"><i class="fas fa-shopping-cart"></i>購物車</a></li>
+        <li><a href="#立即預定"><i class="fas fa-check-square"></i>立即預定</a></li>
+        <li><a href="#訂單管理"><i class="fas fa-tasks"></i>訂單管理</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="banner bg-cover" style="background-image: url('https://images.unsplash.com/photo-1578500339042-8059dc18b911?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');">
+    <div class="container">
+      <h2>讓窩窩家居，<br>把你的窩裝潢得美美 der 🖤</h2>
+    </div>
+  </section>
+
+  <section class="container section">
+    <h3 class="title">床墊優勢</h3>
+    <ul class="advantage">
+      <li>
+        <img src="https://images.unsplash.com/photo-1590635022668-81cc8696a19d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="木料環保">
+        <h4>木料環保</h4>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1561297331-a9c00b9c2c44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="好組裝">
+        <h4>好組裝</h4>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1506720186575-11354d325017?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1475&q=80" alt="好收納">
+        <h4>好收納</h4>
+      </li>
+    </ul>
+  </section>
+
+  <section class="search-bg" id="傢俱一覽">
+    <div class="container search-block">
+      <select class="search-category mb-5">
+        <option value="" selected hidden>請選擇傢俱種類</option>
+        <option value="">全部種類</option>
+        <option value="收納">收納</option>
+        <option value="床架">床架</option>
+        <option value="窗簾">窗簾</option>
+      </select>
+
+      <div class="keyword-block">
+        <input type="text" placeholder="搜尋品項" class="search-keyword">
+        <a href="#" class="keyword-del"><i class="fas fa-times"></i></a>
+      </div>
+      <button type="button" class="btn btn-dark" id="search-btn">搜尋</button>
+    </div>
+  </section>
+
+  <div class="container">
+    <ul class="product-block"></ul>
+
+    <section class="section">
+      <h3 class="title" id="購物車">我的購物車</h3>
+      <p class="empty-cart">目前購物車是空的，趕快去選購ㄅ！ヽ(●´ω｀●)ﾉ</p>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th style="width: 15%">品項</th>
+            <th style="width: 30%"></th>
+            <th style="width: 15%">單價</th>
+            <th style="width: 10%">數量</th>
+            <th style="width: 15%">金額</th>
+            <th style="width: 5%"></th>
+          </tr>
+        </thead>
+        <tbody class="cart-items">
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">
+              <button class="btn btn-outline-dark" id="del-carts">清空購物車</button>
+            </td>
+            <td class="cart-total" colspan="4">總金額 $</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section class="section">
+      <h3 class="title" id="立即預定">填寫預訂資料</h3>
+      <form class="reservation-form">
+        <div>
+          <label for="reservation-name">姓名*</label>
+          <p class="feedback" data-name="姓名"></p>
+        </div>
+        <input type="text" id="reservation-name" name="姓名" placeholder="王窩窩">
+        <div>
+          <label for="reservation-phone">電話*</label>
+          <p class="feedback" data-name="電話"></p>
+        </div>
+        <input type="tel" id="reservation-phone" name="電話" placeholder="0912345678">
+        <div>
+          <label for="reservation-email">電子郵件*</label>
+          <p class="feedback" data-name="電子郵件"></p>
+        </div>
+        <input type="email" id="reservation-email" name="電子郵件" placeholder="example@mail.com">
+        <div>
+          <label for="reservation-address">寄送地址*</label>
+          <p class="feedback" data-name="寄送地址"></p>
+        </div>
+        <input type="text" id="reservation-address" name="寄送地址" placeholder="台北市窩窩區家居路 1 號 11 樓 ">
+
+        <div>
+          <label for="reservation-pay">付款方式*</label>
+          <p class="feedback" data-name="付款方式"></p>
+        </div>
+        <select name="付款方式" id="reservation-pay">
+          <option value="" selected disabled hidden>請選擇付款方式</option>
+          <option value="信用卡">信用卡</option>
+          <option value="超商付款">超商付款</option>
+        </select>
+
+        <button type="submit" class="btn btn-dark" id="reservation-submit">送出資料</button>
+      </form>
+    </section>
+
+    <hr>
+
+    <div class="section">
+      <h2 class="title" id="訂單管理"><small>/ 後台 /</small><br>訂單管理</h2>
+      <div class="order-top">
+        <button class="btn btn-outline-dark" id="order-del-all">刪除所有訂單</button>
+      </div>
+      <table class="order-table">
+        <thead>
+          <th style="width: 16%">訂單編號</th>
+          <th style="width: 7%">姓名</th>
+          <th style="width: 9%">電話</th>
+          <th style="width: 13%">電子郵件</th>
+          <th style="width: 18%">寄送地址</th>
+          <th style="width: 18%">訂單品項</th>
+          <th style="width: 8%">訂單日期</th>
+          <th style="width: 7%">訂單狀態</th>
+          <th style="width: 4%">操作</th>
+        </thead>
+        <tbody class="order-items">
+        </tbody>
+      </table>
+
+      <div id="chart"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>copyright © 窩窩家居</p>
+  </footer>
+
+
+  <!-- js -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/all.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>

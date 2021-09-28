@@ -1,0 +1,376 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 0 0 3px #444;
+  letter-spacing: 6px;
+  user-select: none;
+}
+
+.navbar {
+  display: flex;
+  padding: 20px 0;
+  li+li {
+    margin-left: 16px;
+  }
+  a {
+    padding: 16px 8px;
+    color: inherit;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 50%;
+      left: 50%;
+      bottom: 5px;
+      height: 2px;
+      background-color: $highlight;
+      transition: .4s;
+    }
+    &:hover {
+      opacity: .75;
+      &::after {
+        right: 0;
+        left: 0;
+      }
+      & i {
+        transform: rotateX(360deg);
+      }
+    }
+  }
+  i {
+    font-size: 14px;
+    color: $highlight;
+    padding-right: 6px;
+    transition: .4s;
+  }
+}
+
+.banner {
+  height: 400px;
+  margin-bottom: 48px;
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: bold;
+    padding: 24px;
+    color: #fff;
+    text-shadow: $primary 0 0 4px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .05);
+  }
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 48px;
+  &::after {
+    content: '';
+    display: block;
+    width: 25px;
+    left: 0;
+    right: 0;
+    margin: 15px auto;
+    height: 3px;
+    background-color: $primary;
+  }
+}
+
+.advantage {
+  display: flex;
+  justify-content: space-between;
+  li {
+    width: 30%;
+  }
+  img {
+    width: 500px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+  h4 {
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.search- {
+  &block {
+    display: flex;
+    select,
+    input {
+      margin-right: 16px;
+    }
+  }
+  &bg {
+    padding: 20px 0;
+    background-color: $lighter;
+  }
+  &keyword {
+    min-width: 230px;
+  }
+}
+
+.keyword-block {
+  position: relative;
+  display: flex;
+}
+
+.keyword-del {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $light;
+  font-size: 12px;
+}
+
+.product- {
+  &block {
+    padding: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 54px;
+  }
+  &item {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: 0 21px 42px;
+    background-color: $lighter;
+    position: relative;
+  }
+  &img {
+    height: 220px;
+  }
+  &body {
+    padding: 16px 24px 32px;
+    text-align: justify;
+    margin-bottom: auto;
+    p {
+      font-size: 14px;
+    }
+  }
+  &title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  &footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 24px;
+  }
+}
+
+.tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: $primary 0 0 4px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.bg-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.origine-price {
+  color: $light;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.discount-price {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid $highlight;
+}
+
+.cart- {
+  &table {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+    th {
+      padding: 8px;
+      font-weight: bold;
+      border-bottom: 1px solid $light;
+    }
+    td {
+      padding: 8px;
+    }
+    tbody tr:hover {
+      background-color: rgba($lighter, .5);
+    }
+    label {
+      padding: 0 4px;
+    }
+    a {
+      &::before {
+        content: '\f00d';
+        display: inline-block;
+        font-family: 'Font Awesome 5 Pro';
+      }
+      &:hover {
+        color: $highlight;
+      }
+    }
+    button:hover {
+      box-shadow: 1px 1px 3px $light;
+    }
+  }
+  &img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  &total {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    letter-spacing: 1px;
+  }
+}
+
+.empty-cart {
+  font-size: 16px;
+  text-align: center;
+}
+
+.reservation-form {
+  max-width: 350px;
+  margin: 16px auto 0;
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+  label {
+    padding-bottom: 8px;
+  }
+  input,
+  select {
+    margin-bottom: 16px;
+    border-color: rgba($light, .5);
+    &:focus,
+    &:hover {
+      border-color: rgba($light, 1);
+    }
+    &:focus {
+      box-shadow: 0 0 6px rgba($light, .4);
+    }
+  }
+  button {
+    margin-top: 12px;
+    align-self: center;
+  }
+  .feedback {
+    font-size: 14px;
+    color: $highlight;
+    text-align: right;
+    user-select: none;
+  }
+}
+
+.btn {
+  padding: 8px 32px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  transition: .2s;
+}
+
+.section,
+hr {
+  margin-bottom: 96px;
+}
+
+.order- {
+  &top {
+      text-align: right;
+  }
+  &table {
+    width: 100%;
+    font-size: 13px;
+    margin: 16px 0;
+    word-break: break-all;
+    th,
+    td {
+      padding: 8px;
+    }
+    th {
+      font-weight: bold;
+      color: #fff;
+      background-color: $primary;
+    }
+    td {
+      text-align: center;
+      border: 1px solid rgba($light, .4);
+    }
+    button {
+      padding: 0;
+      &:hover {
+        opacity: .6;
+      }
+    }
+    a {
+      color: $highlight;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  background-color: $lighter;
+}
+
+.btn-dark {
+  color: #fff;
+  background: $primary;
+  border: 1px solid $primary;
+  &:hover {
+    color: $primary;
+    background: #eee;
+    border: 1px solid $primary;
+  }
+}
+
+.btn-outline-dark {
+  border: 1px solid $primary;
+  &:hover {
+    background: $primary;
+    color: #fff;
+  }
+}
