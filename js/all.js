@@ -175,12 +175,15 @@ const total = document.querySelector('.cart-total');
 
 function renderCart() {
   let str = '';
-  cartDataAll.carts.forEach(item => {
+  cartDataAll.carts.forEach((item, index) => {
     str +=
       `
       <tr>
         <td>
-          <img src="${item.product.images}" class="cart-img">
+          <div class="cart-flex">
+            ${index +1}.
+            <img src="${item.product.images}" class="cart-img">
+          </div>
         </td>
         <td>${item.product.title}</td>
         <td>NT$ ${item.product.price}</td>

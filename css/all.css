@@ -407,6 +407,9 @@ table th {
 }
 
 @media (max-width: 768px) {
+  .banner {
+    height: 300px;
+  }
   .banner .container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -659,8 +662,20 @@ table th {
           box-shadow: 1px 1px 3px #888;
 }
 
+.cart-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .cart-img {
-  width: 100%;
+  width: 80%;
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;

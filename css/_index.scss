@@ -119,6 +119,7 @@
     }
   }
   @include mobile {
+    height: 300px;
     .container {
       justify-content: center;
     }
@@ -318,8 +319,13 @@
       box-shadow: 1px 1px 3px $light;
     }
   }
+  &flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &img {
-    width: 100%;
+    width: 80%;
     height: 100px;
     object-fit: cover;
     border-radius: 5px;
